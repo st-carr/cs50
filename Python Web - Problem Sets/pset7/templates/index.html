@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+
+{% block main %}
+    <form action="{{ url_for('index') }}" method="post">
+    <fieldset>
+    <table style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th>Symbol</th>
+            <th>Current Price</th>
+            <th>Shares</th>
+            <th>Total Value</th>
+            <th>Number of Shares</th>    
+            <th>Buy / Sell</th>  
+        </tr>
+
+    {% for data in datas %}
+
+            <tr>
+                <td>{{ data[1]["name"] }}</td>
+                <td name="symbol_{{ loop.index }}">{{ data[1]["symbol"] }}</td>
+                
+                <td style="color: green">{{ data[1]["price"] }}</td>
+                <td style="color: green">{{ data[0]["qty"] }}</td>
+                <td style="color: green">{{ (data[0]["qty"]*data[1]["price"]) }}</td>
+                <td>
+                    <input autocomplete="off" autofocus class="form-control" name="qty_{{ loop.index }}" placeholder="Shares" type="text"/>
+                </td>
+                <td>
+                    <select name="action_{{ loop.index }}">
+                        <option value="buy">Buy</option>
+                        <option value="sell">Sell</option>
+                    </select>
+                </td>
+            </tr>
+        
+    {% endfor %}
+    </table>
+    <br>
+    <br>
+            <button class="btn btn-default" name="buy" type="submit">Submit</button>    
+        </fieldset>
+    </form>
+    
+    
+    
+    <br>
+    <br>
+    <table style="width:100%">
+        <tr>
+            <th>Cash Balance</th>
+            <th>Stock Holdings</th>
+        </tr>
+        <tr>
+            <td>{{ cash }}</td>
+            <td>{{ stock_total }}</td>
+        </tr>
+    </table>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,7 @@
+0.  is an artificial long word said to mean a lung disease caused by inhaling very fine ash and sand dust. (Copied from Google)
+1.  "returns resource usage mesasures."
+2.  16
+3.   Because it is a struct's value that is being used - need its mem location.
+4.  Uses a for loop to read each character from the text to be checked until the end of the file, iterating forward using fgetc to check the next character. Within this loop, only alphabetical characters and apostophres allowed to be added to the word to be checked, however the apostrophe can only be added if there is at least one character already in the word to be checked. If the word being checked ends up being too long, the program quickly iterates through the rest of the word and discards it, preparing for the next word. Similarly, a word is discarded if a number is discovered within it. A word to be checked is then completed with a /0 and the word counter is updated. The word is then passed to the misspelled function, which returns either true or false. 
+5.  Would have to track the position of the file pointer. 
+6.  They will not change.

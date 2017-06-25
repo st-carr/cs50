@@ -1,0 +1,12 @@
+1.  Header file that includes TYPEDEFS of integers with specficic and consistent widths (exact sizes?).
+2.  To allow for more precise and portable programming.
+3.  1 bytes in a BYTE; 4 bytes in a DWORD; 4 bytes in a LONG; 2 bytes in a WORD
+4.  ASCII - BM
+5.  bfSize: The size, in bytes, of the bitmap file. / biSize: The number of bytes required by the structure.
+6.  If biHeight is negative, indicating a top-down DIB, biCompression must be either BI_RGB or BI_BITFIELDS. Top-down DIBs cannot be compressed.
+7.  biBitCount
+8.  If it was unable to read the opened file. / If it was unable to write to the opened file. 
+9.  Reading the file only 1 time.
+10. 3
+11. Use fseek when you want to change the offset of the file pointer fp.
+12. change the location of the pointer fp from its current location

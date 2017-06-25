@@ -1,0 +1,7 @@
+0. Minimum of size 3 and maximum of size 9.
+1. A two-dimensional array. 
+2. greet();
+3.  init();
+    draw();
+    move();
+    won();

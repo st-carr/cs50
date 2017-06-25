@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <table style="width:100%">
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    {% for row in rows %}
+        <tr>
+            <td>{{ row["symbol"] }}</td>
+            <td>{{ row["qty"] }}</td>
+            <td>{{ row["price"] }}</td>
+            <td>{{ row["action"] }}</td>        
+        </tr>
+    {% endfor %}    
+
+{% endblock %}
+
+
+
+
